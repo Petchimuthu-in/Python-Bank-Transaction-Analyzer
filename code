@@ -1,0 +1,41 @@
+transactions = [500, -200, 1000, -300, -100, 2000, -500]
+# Variables
+total_deposit = 0
+total_withdrawal = 0
+deposit_count = 0
+withdrawal_count = 0
+deposits = []
+withdrawals = []
+# Check each transaction
+for amount in transactions:
+    if amount > 0:
+        total_deposit = total_deposit + amount
+        deposit_count = deposit_count + 1
+        deposits.append(amount)
+    else:
+        total_withdrawal = total_withdrawal + abs(amount)
+        withdrawal_count = withdrawal_count + 1
+        withdrawals.append(abs(amount))
+# Highest deposit
+highest_deposit = max(deposits)
+# Highest withdrawal
+highest_withdrawal = max(withdrawals)
+# Final balance
+final_balance = total_deposit - total_withdrawal
+# Unique transactions
+unique_transactions = set(transactions)
+# Dictionary
+transaction_details = {
+    "Deposit": deposits,
+    "Withdrawal": withdrawals
+}
+print("Total Transactions:", len(transactions))
+print("Total Deposit:", total_deposit)
+print("Total Withdrawal:", total_withdrawal)
+print("Highest Deposit:", highest_deposit)
+print("Highest Withdrawal:", highest_withdrawal)
+print("Number of Deposits:", deposit_count)
+print("Number of Withdrawals:", withdrawal_count)
+print("Final Balance:", final_balance)
+print("Unique Transactions:", unique_transactions)
+print("Transaction Details:", transaction_details)
